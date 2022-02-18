@@ -13,13 +13,13 @@ function App() {
   }, [])
 
   function getData(){
-    fetch('http://localhost:3030/contacts')
+    fetch('https://d1xq2dirpogdnx.cloudfront.net/contacts')
       .then(res => res.json())
       .then(res => setContacts([...res]))
   }
 
   function deleteContact(id){
-    fetch(`http://localhost:3030/contact/${id}`, {
+    fetch(`https://d1xq2dirpogdnx.cloudfront.net/contact/${id}`, {
       method: 'DELETE',
       headers:{
         'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ function App() {
   }
 
   function addItem(){
-    fetch(`http://localhost:3030/contacts`, {
+    fetch(`https://d1xq2dirpogdnx.cloudfront.net/contacts`, {
       method: 'POST',
       headers:{
         'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ function App() {
   }
 
   function completeUpdate(contact){
-    fetch(`http://localhost:3030/contacts`, {
+    fetch(`https://d1xq2dirpogdnx.cloudfront.net/contacts`, {
       method: 'PUT',
       headers:{
         'Content-Type': 'application/json',
