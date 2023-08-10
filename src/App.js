@@ -13,13 +13,13 @@ function App() {
   }, [])
 
   function getData(){
-    fetch('http://ec2-184-73-75-172.compute-1.amazonaws.com:3030/contacts')
+    fetch('https://d17spsj5xv07bn.cloudfront.net/contacts')
       .then(res => res.json())
       .then(res => setContacts([...res]))
   }
 
   function deleteContact(id){
-    fetch(`http://ec2-184-73-75-172.compute-1.amazonaws.com:3030/contact/${id}`, {
+    fetch(`https://d17spsj5xv07bn.cloudfront.net/contact/${id}`, {
       method: 'DELETE',
       headers:{
         'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ function App() {
   }
 
   function addItem(){
-    fetch(`http://ec2-184-73-75-172.compute-1.amazonaws.com:3030/contacts`, {
+    fetch(`https://d17spsj5xv07bn.cloudfront.net/contacts`, {
       method: 'POST',
       headers:{
         'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ function App() {
   }
 
   function completeUpdate(contact){
-    fetch(`http://ec2-184-73-75-172.compute-1.amazonaws.com:3030/contacts`, {
+    fetch(`https://d17spsj5xv07bn.cloudfront.net/contacts`, {
       method: 'PUT',
       headers:{
         'Content-Type': 'application/json',
