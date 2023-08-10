@@ -6,20 +6,20 @@ function App() {
   const [newContact, setNewContact] = useState({name:'', email_address:'', age:''});
   const [update, setUpdate] = useState({});
   const [hidden, setHidden] = useState(true);
-  
+
 
   useEffect(()=>{
     getData()
   }, [])
 
   function getData(){
-    fetch('https://d1xq2dirpogdnx.cloudfront.net/contacts')
+    fetch('http://localhost:3030/contacts')
       .then(res => res.json())
       .then(res => setContacts([...res]))
   }
 
   function deleteContact(id){
-    fetch(`https://d1xq2dirpogdnx.cloudfront.net/contact/${id}`, {
+    fetch(`http://localhost:3030/contact/${id}`, {
       method: 'DELETE',
       headers:{
         'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ function App() {
   }
 
   function addItem(){
-    fetch(`https://d1xq2dirpogdnx.cloudfront.net/contacts`, {
+    fetch(`http://localhost:3030/contacts`, {
       method: 'POST',
       headers:{
         'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ function App() {
   }
 
   function completeUpdate(contact){
-    fetch(`https://d1xq2dirpogdnx.cloudfront.net/contacts`, {
+    fetch(`http://localhost:3030/contacts`, {
       method: 'PUT',
       headers:{
         'Content-Type': 'application/json',
